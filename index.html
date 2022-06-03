@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>E Cart using IoT</title>
+  </head>
+  <style type="text/css">
+    body {
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+      text-align: center;
+    }
+
+    table {
+      border-collapse: collapse;
+    }
+    .center {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    th {
+      background-color: #3498db;
+      color: white;
+    }
+    table,
+    td {
+      border: 2px solid black;
+      font-size: x-large;
+      text-align: left;
+      border-style: groove;
+    }
+
+    .pay {
+      border: none;
+      color: white;
+      font-weight: bold;
+      padding: 5px;
+      height: 50px;
+      font-size: large;
+      width: 100px;
+      border-radius: 10px;
+      background-color: #3498db;
+    }
+    @media only screen and (max-width: 700px) {
+      table,
+      thead,
+      tbody,
+      th,
+      td,
+      tr {
+        display: block;
+        font-size: large;
+      }
+
+      thead th {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+      }
+
+      tr {
+        border: 1px solid #ccc;
+        width: auto;
+      }
+
+      td {
+        border: none;
+        border-bottom: 1px solid #eee;
+        position: relative;
+        padding-left: 50%;
+      }
+
+      td:before {
+        position: absolute;
+        top: 6px;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+      }
+      tr:nth-child(2n) {
+        background-color: lightblue;
+      }
+
+      td:nth-child(n) {
+        font-weight: bold;
+      }
+
+      td:nth-of-type(1):before {
+        content: "Item";
+      }
+      td:nth-of-type(2):before {
+        content: "Quantity";
+      }
+      td:nth-of-type(3):before {
+        content: "Cost";
+      }
+    }
+  </style>
+  <body>
+      <h1>Smart Shopping Cart using IoT</h1>
+      <br />
+      <h3>Invoice summary</h3>
+      <table class="center">
+        <thead>
+          <th>Item</th>
+          <th>Quantity</th>
+          <th>Cost</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Biscuit</td>
+            <td>${String(p1)}</td>
+            <td>${String(c1)}</td>
+          </tr>
+          <tr>
+            <td>Soap</td>
+            <td>${String(p2)}</td>
+            <td>${String(c2)}</td>
+          </tr>
+          <tr>
+            <td>Rice(1KG)</td>
+            <td>${String(p3)}</td>
+            <td>${String(c3)}</td>
+          </tr>
+          <tr>
+            <td>Tea(50g)</td>
+            <td>${String(p4)}</td>
+            <td>${String(c4)}</td>
+          </tr>
+          <tr>
+            <th>Grand Total</th>
+            <td>${String(count_prod)}</td>
+            <td>${String(total)}</td>
+          </tr>
+        </tbody>
+      </table>
+      <br />
+      <input class="pay" type="button" name="Pay Now" value="Pay Now" />
+  </body>
+</html>
